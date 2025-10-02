@@ -1,0 +1,325 @@
+:root {
+    --component-border-radius: 5px;
+}
+
+
+/*
+ * -- BASE STYLES --
+ * Most of these are inherited from Base, but I want to change a few.
+ */
+body {
+  color: #526066;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  line-height: 1.6em;
+}
+
+/*
+ * -- Layout Styles --
+ */
+.l-content {
+  margin: 0 auto;
+}
+
+.l-box {
+  padding: 0.5em 2em;
+}
+
+/*
+ * -- MENU STYLES --
+ * Make the menu have a very faint box-shadow.
+ */
+.pure-menu {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.pure-menu-link {
+  padding: 0.5em 0.7em;
+}
+
+/*
+ * -- BANNER --
+ * The top banner with the headings. By using a combination
+ * of `display: table;` and `display: table-cell;`, we can
+ * vertically center the text.
+ */
+
+.banner {
+  text-align: center;
+  height: 200px;
+  width: 100%;
+  margin-bottom: 3em;
+  background-size: cover;
+  display: table;
+  position: relative;
+  background:#29b6f6;
+}
+
+.banner-head {
+  display: table-cell;
+  vertical-align: middle;
+  margin-bottom: 0;
+  color: white;
+  font-weight: 500;
+  text-shadow: 0 1px 1px black;
+  font-size: 2em;
+}
+
+.banner-head-name {
+  font-size: 1em;
+}
+
+.banner-head-description {
+  font-size: 0.5em;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/*
+ * -- PRICING TABLE WRAPPER --
+ * This element wraps up all the pricing table elements
+ */
+.pricing-tables,
+.information {
+  max-width: 980px;
+  margin: 0 auto;
+}
+.pricing-tables {
+  margin-bottom: 3.125em;
+  text-align: center;
+}
+
+/*
+ * -- PRICING TABLE  --
+ * Every pricing table has the .pricing-table class
+ */
+.pricing-table {
+  border: 1px solid #ddd;
+  border-radius: var(--component-border-radius);
+  margin: 0 0.5em 2em;
+  /* padding: 0 0 3em; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* x-offset, y-offset, blur, color */
+}
+
+/*
+ * -- PRICING TABLE HEADER COLORS --
+ * Choose a different color based on the type of pricing table.
+ */
+
+.pricing-table-biz .pricing-table-header {
+  background: #2c4985;
+}
+
+/*
+ * -- PRICING TABLE HEADER --
+ * By default, a header is black/white, and has some styles for its <h2> name.
+ */
+
+.pricing-table-header {
+  background-image: url('images/campfire-intro.jpg');
+  background-size: cover;       /* Ensures the image covers the entire div */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+  height: 250px;                /* Set a height for the div */
+  color: white;                 /* Text color for contrast */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--component-border-radius) var(--component-border-radius) 0 0;
+}
+
+/*
+ * -- Component Table / Pricing Taaable --
+ * Styles for the price and the corresponding <span>per month</span>
+ */
+
+.component-cell-name {
+  display: block;
+  text-transform: uppercase;
+  padding: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.component-cell-description {
+  display: block;
+}
+
+/*
+ * -- PRICING TABLE LIST --
+ * Each pricing table has a <ul> which is denoted by the .pricing-table-list class
+ */
+.pricing-table-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/*
+ * -- PRICING TABLE LIST ELEMENTS --
+ * Styles for the individual list elements within each pricing table
+ */
+.pricing-table-list li {
+  padding: 0.8em 0;
+  background: #f7f7f7;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.pricing-table-list li>a {
+  all: unset; /* Resets most inherited and default styles */
+  cursor: pointer; /* Optional: keeps pointer cursor */
+}
+
+.pricing-table-list > li:last-child {
+    border-radius: 0 0 var(--component-border-radius) var(--component-border-radius);
+}
+
+.footer {
+  background: #111;
+  color: #888;
+  text-align: center;
+}
+.footer a {
+  color: #ddd;
+}
+
+/*
+ * -- TABLET MEDIA QUERIES --
+ * On tablets, we want to slightly adjust the size of the banner
+ * text and add some vertical space between the various pricing tables
+ */
+@media (min-width: 767px) {
+  .pricing-table {
+    margin-bottom: 0;
+  }
+  
+  .banner-head {
+    font-size: 4em;
+  }
+}
+
+/*
+ * -- PHONE MEDIA QUERIES --
+ * On phones, we want to reduce the height and font-size of the banner further
+ */
+@media (min-width: 480px) {
+  .banner {
+    height: 400px;
+  }
+  
+  .banner-head {
+    font-size: 3em;
+  }
+}
+
+/*
+  Banner CSS Animation
+*/
+
+.bubbles{
+  position:absolute;
+  width:100%;
+  height: 100%;
+  z-index:0;
+  overflow:hidden;
+  top:0;
+  left:0;
+}
+.bubble{
+  position: absolute;
+  bottom:-100px;
+  width:40px;
+  height: 40px;
+  background:#f1f1f1;
+  border-radius:50%;
+  opacity:0.5;
+  animation: rise 10s infinite ease-in;
+}
+.bubble:nth-child(1){
+  width:40px;
+  height:40px;
+  left:10%;
+  animation-duration:8s;
+}
+.bubble:nth-child(2){
+  width:20px;
+  height:20px;
+  left:20%;
+  animation-duration:5s;
+  animation-delay:1s;
+}
+.bubble:nth-child(3){
+  width:50px;
+  height:50px;
+  left:35%;
+  animation-duration:7s;
+  animation-delay:2s;
+}
+.bubble:nth-child(4){
+  width:80px;
+  height:80px;
+  left:50%;
+  animation-duration:11s;
+  animation-delay:0s;
+}
+.bubble:nth-child(5){
+  width:35px;
+  height:35px;
+  left:55%;
+  animation-duration:6s;
+  animation-delay:1s;
+}
+.bubble:nth-child(6){
+  width:45px;
+  height:45px;
+  left:65%;
+  animation-duration:8s;
+  animation-delay:3s;
+}
+.bubble:nth-child(7){
+  width:90px;
+  height:90px;
+  left:70%;
+  animation-duration:12s;
+  animation-delay:2s;
+}
+.bubble:nth-child(8){
+  width:25px;
+  height:25px;
+  left:80%;
+  animation-duration:6s;
+  animation-delay:2s;
+}
+.bubble:nth-child(9){
+  width:15px;
+  height:15px;
+  left:70%;
+  animation-duration:5s;
+  animation-delay:1s;
+}
+.bubble:nth-child(10){
+  width:90px;
+  height:90px;
+  left:25%;
+  animation-duration:10s;
+  animation-delay:4s;
+}
+@keyframes rise{
+  0%{
+    bottom:-100px;
+    transform:translateX(0);
+  }
+  50%{
+    transform:translate(100px);
+  }
+  100%{
+    bottom:1080px;
+    transform:translateX(-200px);
+  }
+}
