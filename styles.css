@@ -17,13 +17,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h2,
-h3 {
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
 p {
   line-height: 1.6em;
 }
@@ -76,6 +69,7 @@ p {
   color: white;
   font-weight: 500;
   text-shadow: 0 1px 1px black;
+  font-size: 2em;
 }
 
 .banner-head-name {
@@ -140,31 +134,10 @@ p {
   border-radius: var(--component-border-radius) var(--component-border-radius) 0 0;
 }
 
-.pricing-table-header h2 {
-  margin: 0;
-  padding-top: 2em;
-  font-size: 1em;
-  font-weight: normal;
-}
-
 /*
- * -- PRICING TABLE PRICE --
+ * -- Component Table / Pricing Taaable --
  * Styles for the price and the corresponding <span>per month</span>
  */
-.pricing-table-price {
-  font-size: 6em;
-  margin: 0.2em 0 0;
-  font-weight: 100;
-}
-.pricing-table-price span {
-  display: block;
-  text-transform: uppercase;
-  font-size: 0.2em;
-  padding-bottom: 2em;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
-  *color: #fff;
-}
 
 .component-cell-name {
   display: block;
@@ -207,26 +180,6 @@ p {
     border-radius: 0 0 var(--component-border-radius) var(--component-border-radius);
 }
 
-/*
- * -- PRICING TABLE BUTTON --
- * Styles for the "Choose" button at the bottom of a pricing table.
- * This inherits from Pure Button.
- */
-.button-choose {
-  border: 1px solid #ccc;
-  background: #fff;
-  color: #333;
-  border-radius: 2em;
-  font-weight: bold;
-  position: relative;
-  bottom: -1.5em;
-}
-
-.information-head {
-  color: black;
-  font-weight: 500;
-}
-
 .footer {
   background: #111;
   color: #888;
@@ -242,11 +195,12 @@ p {
  * text and add some vertical space between the various pricing tables
  */
 @media (min-width: 767px) {
-  .banner-head {
-    font-size: 4em;
-  }
   .pricing-table {
     margin-bottom: 0;
+  }
+  
+  .banner-head {
+    font-size: 4em;
   }
 }
 
@@ -258,11 +212,15 @@ p {
   .banner {
     height: 400px;
   }
+  
   .banner-head {
     font-size: 3em;
   }
 }
 
+/*
+  Banner CSS Animation
+*/
 
 .bubbles{
   position:absolute;
