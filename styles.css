@@ -186,6 +186,8 @@ p {
   text-align: center;
 }
 .footer a {
+  all: unset; /* Resets most inherited and default styles */
+  cursor: pointer; /* Optional: keeps pointer cursor */
   color: #ddd;
 }
 
